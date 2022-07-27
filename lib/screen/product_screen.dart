@@ -5,14 +5,14 @@ import 'package:drawer_app/drawer_menu.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+class ProductScreen extends StatefulWidget {
+  const ProductScreen({Key? key}) : super(key: key);
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<ProductScreen> createState() => _ProductScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _ProductScreenState extends State<ProductScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -144,59 +144,3 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
-
-
-
-
-// Padding(
-      //   padding: const EdgeInsets.symmetric(horizontal: 20),
-      //   child: ListView(
-      //     children: [
-      //       const Gap(20),
-      //       Container(
-      //         decoration: BoxDecoration(
-      //           borderRadius: BorderRadius.circular(10),
-      //           color: Colors.white,
-      //           boxShadow: [
-      //             BoxShadow(
-      //               color: Colors.grey.shade300,
-      //               blurRadius: 4,
-      //               offset: Offset(4, 5), // Shadow position
-      //             ),
-      //           ],
-      //         ),
-      //         child: const Padding(
-      //           padding: EdgeInsets.only(left: 10),
-      //           child: TextField(
-      //             decoration: InputDecoration(
-      //                 suffixIcon: Icon(
-      //                   Icons.search,
-      //                   color: Colors.grey,
-      //                 ),
-      //                 border: InputBorder.none,
-      //                 hintText: 'Search'),
-      //           ),
-      //         ),
-      //       ),
-      //       const Gap(30),
-
-      //       const Gap(20),
-   
-      //       const Gap(30),
-      //       
-      //       const Gap(20),
-      //       
-      //       Gap(30),
-      //       Row(
-      //         crossAxisAlignment: CrossAxisAlignment.end,
-      //         children: const [
-      //           Text('Top categorie8888',
-      //               style:
-      //                   TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-      //         ],
-      //       ),
-      //       Gap(20),
-      //       Categorie()
-      //     ],
-      //   ),
-      // )
