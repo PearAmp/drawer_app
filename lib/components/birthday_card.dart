@@ -1,3 +1,4 @@
+import 'package:drawer_app/page/dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
@@ -66,7 +67,13 @@ class BirthdayCard extends StatelessWidget {
                     style: ElevatedButton.styleFrom(
                       primary: Colors.blue.shade800,
                     ),
-                    onPressed: (() {}),
+                    onPressed: (() {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const DashboardPage()),
+                      );
+                    }),
                     child: const Text('Add to CWN'))
               ],
             ),
