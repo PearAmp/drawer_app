@@ -1,5 +1,5 @@
 import 'package:drawer_app/login/login_page.dart';
-import 'package:drawer_app/screen/home_screen.dart';
+import 'package:drawer_app/screen/product_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'views/fetch_data/fetch_data.dart';

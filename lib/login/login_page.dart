@@ -1,5 +1,5 @@
 import 'package:drawer_app/register/register_page.dart';
-import 'package:drawer_app/screen/home_screen.dart';
+import 'package:drawer_app/screen/product_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gap/gap.dart';
@@ -88,7 +88,7 @@ class _LoginPageState extends State<LoginPage> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const HomeScreen()),
+                          builder: (context) => const ProductScreen()),
                     );
                   },
                   child: const Center(

@@ -1,5 +1,5 @@
 import 'package:drawer_app/login/login_page.dart';
-import 'package:drawer_app/screen/home_screen.dart';
+import 'package:drawer_app/screen/product_screen.dart';
 import 'package:drawer_app/screen/profile_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -26,12 +26,12 @@ class _DrawerMenuState extends State<DrawerMenu> {
             ),
           ),
           ListTile(
-            leading: const Icon(Icons.home),
-            title: const Text('Home'),
+            leading: const Icon(Icons.production_quantity_limits),
+            title: const Text('Product'),
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const HomeScreen()),
+                MaterialPageRoute(builder: (context) => const ProductScreen()),
               );
             },
           ),

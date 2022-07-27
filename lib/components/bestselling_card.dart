@@ -84,7 +84,7 @@ class TextCard extends StatelessWidget {
             ...List.generate(
                 4,
                 (index) => const StartWidget(
-                      color: Colors.deepOrange,
+                      color: Colors.amber,
                     )),
             const StartWidget(),
             const Text(
