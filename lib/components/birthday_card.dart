@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
+import 'bestselling_card.dart';
+
 class BirthdayCard extends StatelessWidget {
   const BirthdayCard({
     Key? key,
@@ -11,6 +13,7 @@ class BirthdayCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: EdgeInsets.only(right: 10),
       width: 300,
       decoration: const BoxDecoration(
         color: Colors.white,
@@ -45,31 +48,12 @@ class BirthdayCard extends StatelessWidget {
                 Gap(8),
                 Row(
                   children: [
-                    Icon(
-                      Icons.star,
-                      size: 15,
-                      color: Colors.amber.shade600,
-                    ),
-                    Icon(
-                      Icons.star,
-                      size: 15,
-                      color: Colors.amber.shade600,
-                    ),
-                    Icon(
-                      Icons.star,
-                      size: 15,
-                      color: Colors.amber.shade600,
-                    ),
-                    Icon(
-                      Icons.star,
-                      size: 15,
-                      color: Colors.amber.shade600,
-                    ),
-                    Icon(
-                      Icons.star,
-                      size: 15,
-                      color: Colors.grey.shade400,
-                    ),
+                    ...List.generate(
+                        4,
+                        (index) => const StartWidget(
+                              color: Colors.amber,
+                            )),
+                    const StartWidget(),
                     Gap(10),
                     const Text(
                       '(30%)',

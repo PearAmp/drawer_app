@@ -28,7 +28,7 @@ class _HomeScreenState extends State<HomeScreen> {
         padding: const EdgeInsets.symmetric(horizontal: 10),
         child: Column(
           children: [
-            SizedBoxHeightWidget(),
+            Gap(20),
             Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
@@ -54,7 +54,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
             ),
-            SizedBoxHeightWidget(),
+            Gap(20),
             Row(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: const [
@@ -72,7 +72,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ],
             ),
-            SizedBoxHeightWidget(),
+            Gap(20),
             SizedBox(
                 height: 150,
                 width: double.infinity,
@@ -80,12 +80,12 @@ class _HomeScreenState extends State<HomeScreen> {
                   scrollDirection: Axis.horizontal,
                   child: Row(
                     children: List.generate(
-                      20,
+                      5,
                       (index) => BirthdayCard(),
                     ),
                   ),
                 )),
-            SizedBoxHeightWidget(),
+            Gap(20),
             Row(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: const [
@@ -102,7 +102,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ],
             ),
-            SizedBoxHeightWidget(),
+            Gap(20),
             SizedBox(
               height: 150,
               width: double.infinity,
@@ -112,7 +112,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       // วิธีที่ 2
                       child: ListView.builder(
                           scrollDirection: Axis.horizontal,
-                          itemCount: 5,
+                          itemCount: 10,
                           itemBuilder: (_, index) => Padding(
                                 padding:
                                     const EdgeInsets.symmetric(horizontal: 5),
@@ -127,15 +127,16 @@ class _HomeScreenState extends State<HomeScreen> {
                 ],
               ),
             ),
-            SizedBoxHeightWidget(),
+            Gap(20),
             Row(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: const [
-                Text('Top categorie8888',
+                Text('Top categorie',
                     style:
                         TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
               ],
             ),
+            Gap(20),
             Categorie()
           ],
         ),
@@ -144,17 +145,7 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 }
 
-class SizedBoxHeightWidget extends StatelessWidget {
-  const SizedBoxHeightWidget({Key? key, this.height}) : super(key: key);
-  final double? height;
 
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: height ?? 20,
-    );
-  }
-}
 
 
 // Padding(
