@@ -165,7 +165,7 @@ class _HomeScreenState extends State<HomeScreen> {
             Row(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: const [
-                Text('Top categorie',
+                Text('Top categorie8888',
                     style:
                         TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
               ],
