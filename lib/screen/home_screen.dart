@@ -1,4 +1,6 @@
+import 'package:drawer_app/components/bestselling_card.dart';
 import 'package:drawer_app/components/birthday_card.dart';
+import 'package:drawer_app/components/categorie_card.dart';
 import 'package:drawer_app/drawer_menu.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -18,14 +20,14 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         shadowColor: Colors.transparent,
         backgroundColor: Colors.blue.shade800,
-        title: Text('Hi'),
+        title: const Text('Product Detail'),
       ),
-      drawer: DrawerMenu(),
+      drawer: const DrawerMenu(),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
-        child: Column(
+        child: ListView(
           children: [
-            Gap(20),
+            const Gap(20),
             Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
@@ -51,43 +53,125 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
             ),
-            Gap(30),
-            Container(
-              child: Row(
-                children: [
-                  Text('Today Trending'),
-                  Text('4 March'),
-                ],
-              ),
-            ),
-            Container(),
-            Expanded(
-                child: ListView(
-              scrollDirection: Axis.horizontal,
-              children: [
-                Column(
-                  children: [
-                    const BirthdayCard(),
-                  ],
+            const Gap(30),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: const [
+                Text(
+                  'Today Trending',
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                 ),
-                Gap(20),
-                Column(
-                  children: [
-                    BirthdayCard(),
-                  ],
-                ),
-                Column(
-                  children: [
-                    BirthdayCard(),
-                  ],
-                ),
-                Column(
-                  children: [
-                    BirthdayCard(),
-                  ],
+                Gap(10),
+                Text(
+                  '4 March',
+                  style: TextStyle(
+                    fontSize: 13,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ],
-            ))
+            ),
+            const Gap(20),
+            SizedBox(
+              height: 150,
+              child: Expanded(
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: [
+                    Column(
+                      children: const [
+                        BirthdayCard(),
+                      ],
+                    ),
+                    Gap(10),
+                    Column(
+                      children: const [
+                        BirthdayCard(),
+                      ],
+                    ),
+                    Gap(10),
+                    Column(
+                      children: const [
+                        BirthdayCard(),
+                      ],
+                    ),
+                    Gap(10),
+                    Column(
+                      children: const [
+                        BirthdayCard(),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            const Gap(30),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: const [
+                Text('Best Selling',
+                    style:
+                        TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                Gap(10),
+                Text(
+                  'This week',
+                  style: TextStyle(
+                    fontSize: 13,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ],
+            ),
+            const Gap(20),
+            SizedBox(
+              height: 150,
+              child: Expanded(
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: const [
+                        BestCard(),
+                        TextCard(),
+                      ],
+                    ),
+                    const Gap(10),
+                    Column(
+                      children: const [
+                        BestCard(),
+                        TextCard(),
+                      ],
+                    ),
+                    const Gap(10),
+                    Column(
+                      children: const [
+                        BestCard(),
+                        TextCard(),
+                      ],
+                    ),
+                    const Gap(10),
+                    Column(
+                      children: const [
+                        BestCard(),
+                        TextCard(),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            Gap(30),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: const [
+                Text('Top categorie',
+                    style:
+                        TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+              ],
+            ),
+            Gap(20),
+            Categorie()
           ],
         ),
       ),
