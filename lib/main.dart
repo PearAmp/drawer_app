@@ -2,6 +2,8 @@ import 'package:drawer_app/login/login_page.dart';
 import 'package:drawer_app/screen/home_screen.dart';
 import 'package:flutter/material.dart';
 
+import 'views/fetch_data/fetch_data.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -18,7 +20,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: LoginPage(),
+      home: FetchData(),
     );
   }
 }
