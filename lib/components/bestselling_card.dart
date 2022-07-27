@@ -80,32 +80,13 @@ class TextCard extends StatelessWidget {
         ),
         Row(
           children: [
-            Icon(
-              Icons.star,
-              size: 10,
-              color: Colors.amber.shade600,
-            ),
-            Icon(
-              Icons.star,
-              size: 10,
-              color: Colors.amber.shade600,
-            ),
-            Icon(
-              Icons.star,
-              size: 10,
-              color: Colors.amber.shade600,
-            ),
-            Icon(
-              Icons.star,
-              size: 10,
-              color: Colors.amber.shade600,
-            ),
-            Icon(
-              Icons.star,
-              size: 10,
-              color: Colors.grey.shade600,
-            ),
-            const Gap(10),
+            // วิธีที่ 3
+            ...List.generate(
+                4,
+                (index) => const StartWidget(
+                      color: Colors.deepOrange,
+                    )),
+            const StartWidget(),
             const Text(
               '(644)',
               style: TextStyle(
@@ -116,6 +97,19 @@ class TextCard extends StatelessWidget {
           ],
         ),
       ],
+    );
+  }
+}
+
+class StartWidget extends StatelessWidget {
+  const StartWidget({Key? key, this.color}) : super(key: key);
+  final Color? color;
+  @override
+  Widget build(BuildContext context) {
+    return Icon(
+      Icons.star,
+      size: 10,
+      color: color ?? Colors.grey,
     );
   }
 }

@@ -23,11 +23,12 @@ class _HomeScreenState extends State<HomeScreen> {
         title: const Text('Product Detail'),
       ),
       drawer: const DrawerMenu(),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
-        child: ListView(
+      body: SingleChildScrollView(
+          child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 10),
+        child: Column(
           children: [
-            const Gap(20),
+            SizedBoxHeightWidget(),
             Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
@@ -53,7 +54,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
             ),
-            const Gap(30),
+            SizedBoxHeightWidget(),
             Row(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: const [
@@ -71,41 +72,20 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ],
             ),
-            const Gap(20),
+            SizedBoxHeightWidget(),
             SizedBox(
-              height: 150,
-              child: Expanded(
-                child: ListView(
+                height: 150,
+                width: double.infinity,
+                child: SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
-                  children: [
-                    Column(
-                      children: const [
-                        BirthdayCard(),
-                      ],
+                  child: Row(
+                    children: List.generate(
+                      20,
+                      (index) => BirthdayCard(),
                     ),
-                    Gap(10),
-                    Column(
-                      children: const [
-                        BirthdayCard(),
-                      ],
-                    ),
-                    Gap(10),
-                    Column(
-                      children: const [
-                        BirthdayCard(),
-                      ],
-                    ),
-                    Gap(10),
-                    Column(
-                      children: const [
-                        BirthdayCard(),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            const Gap(30),
+                  ),
+                )),
+            SizedBoxHeightWidget(),
             Row(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: const [
@@ -122,46 +102,32 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ],
             ),
-            const Gap(20),
+            SizedBoxHeightWidget(),
             SizedBox(
               height: 150,
-              child: Expanded(
-                child: ListView(
-                  scrollDirection: Axis.horizontal,
-                  children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const [
-                        BestCard(),
-                        TextCard(),
-                      ],
-                    ),
-                    const Gap(10),
-                    Column(
-                      children: const [
-                        BestCard(),
-                        TextCard(),
-                      ],
-                    ),
-                    const Gap(10),
-                    Column(
-                      children: const [
-                        BestCard(),
-                        TextCard(),
-                      ],
-                    ),
-                    const Gap(10),
-                    Column(
-                      children: const [
-                        BestCard(),
-                        TextCard(),
-                      ],
-                    ),
-                  ],
-                ),
+              width: double.infinity,
+              child: Row(
+                children: [
+                  Expanded(
+                      // วิธีที่ 2
+                      child: ListView.builder(
+                          scrollDirection: Axis.horizontal,
+                          itemCount: 5,
+                          itemBuilder: (_, index) => Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 5),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    BestCard(),
+                                    TextCard(),
+                                  ],
+                                ),
+                              ))),
+                ],
               ),
             ),
-            Gap(30),
+            SizedBoxHeightWidget(),
             Row(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: const [
@@ -170,11 +136,76 @@ class _HomeScreenState extends State<HomeScreen> {
                         TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
               ],
             ),
-            Gap(20),
             Categorie()
           ],
         ),
-      ),
+      )),
     );
   }
 }
+
+class SizedBoxHeightWidget extends StatelessWidget {
+  const SizedBoxHeightWidget({Key? key, this.height}) : super(key: key);
+  final double? height;
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: height ?? 20,
+    );
+  }
+}
+
+
+// Padding(
+      //   padding: const EdgeInsets.symmetric(horizontal: 20),
+      //   child: ListView(
+      //     children: [
+      //       const Gap(20),
+      //       Container(
+      //         decoration: BoxDecoration(
+      //           borderRadius: BorderRadius.circular(10),
+      //           color: Colors.white,
+      //           boxShadow: [
+      //             BoxShadow(
+      //               color: Colors.grey.shade300,
+      //               blurRadius: 4,
+      //               offset: Offset(4, 5), // Shadow position
+      //             ),
+      //           ],
+      //         ),
+      //         child: const Padding(
+      //           padding: EdgeInsets.only(left: 10),
+      //           child: TextField(
+      //             decoration: InputDecoration(
+      //                 suffixIcon: Icon(
+      //                   Icons.search,
+      //                   color: Colors.grey,
+      //                 ),
+      //                 border: InputBorder.none,
+      //                 hintText: 'Search'),
+      //           ),
+      //         ),
+      //       ),
+      //       const Gap(30),
+
+      //       const Gap(20),
+   
+      //       const Gap(30),
+      //       
+      //       const Gap(20),
+      //       
+      //       Gap(30),
+      //       Row(
+      //         crossAxisAlignment: CrossAxisAlignment.end,
+      //         children: const [
+      //           Text('Top categorie8888',
+      //               style:
+      //                   TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+      //         ],
+      //       ),
+      //       Gap(20),
+      //       Categorie()
+      //     ],
+      //   ),
+      // )
